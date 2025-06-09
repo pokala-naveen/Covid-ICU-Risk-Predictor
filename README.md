@@ -1,8 +1,6 @@
-## 🔍 Covid-ICU-Risk-Predictor
+##  Covid-ICU-Risk-Predictor
 Description: Machine learning system predicting ICU admission risk for COVID-19 patients using PySpark and cluster-based modeling. Features include data cleaning of 200K+ clinical records, SMOTE balancing, K-Means clustering, and comparative evaluation of logistic regression models. Achieved 0.77 AUC with 58.2% recall.
 
-
-![ICU Prediction Workflow](plots/workflow_diagram.png) *Figure: End-to-end predictive pipeline*
 
 ## 🔍 Project Overview
 Developed a machine learning system to predict ICU admission risk for COVID-19 patients using clinical data (200,031 records, 21 features). Key innovations:
