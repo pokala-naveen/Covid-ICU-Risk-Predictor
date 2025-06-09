@@ -1,9 +1,7 @@
-COVID-ICU-Risk-Prediction  
+#COVID-ICU-Risk-Prediction  
 
 Description: Machine learning system predicting ICU admission risk for COVID-19 patients using PySpark and cluster-based modeling. Features include data cleaning of 200K+ clinical records, SMOTE balancing, K-Means clustering, and comparative evaluation of logistic regression models. Achieved 0.77 AUC with 58.2% recall.
 
-
-# COVID-19 ICU Admission Risk Prediction
 
 ![ICU Prediction Workflow](plots/workflow_diagram.png) *Figure: End-to-end predictive pipeline*
 
@@ -44,64 +42,3 @@ scaler = StandardScaler(inputCol="features", outputCol="scaled_features")
 - `Scikit-learn` (logistic regression, SMOTE)
 - `Seaborn/Matplotlib` (visualization)
 - `Pandas` (data manipulation)
-
-## 📂 Repository Structure
-
-├── data_processing/
-│   ├── data_cleaning.py        # Handling "?", normalization, outlier capping
-│   └── pyspark_preprocessing.py  # Distributed imputation (200K+ records)
-├── modeling/
-│   ├── baseline_model.ipynb    # Logistic regression + evaluation
-│   ├── clustering.py           # K-Means implementation (Elbow method)
-│   └── cluster_classifiers.py  # Local models per cluster
-├── evaluation/
-│   ├── metrics.py              # AUC, F1-score, precision-recall
-│   └── model_comparison.png    # Performance visualization
-├── reports/
-│   ├── Report.pdf              # Full technical report
-│   └── presentation.pptx       # Summary deck
-├── plots/                      # Key visualizations
-│   ├── age_icu_distribution.png
-│   ├── feature_correlation.png
-│   └── cluster_analysis.png
-├── requirements.txt            # Python dependencies
-└── README.md
-
-
-## 🚀 Getting Started
-1. Install dependencies:
-bash
-pip install -r requirements.txt
-
-2. Run data pipeline:
-bash
-python data_processing/pyspark_preprocessing.py
-
-3. Train cluster-based model:
-bash
-python modeling/cluster_classifiers.py
-
-
-## 📌 Key Insights from Analysis
-1. **Age is critical predictor**: 60-79 age group has 4× higher ICU risk
-2. **Comorbidity impact**: Pneumonia increases ICU risk by 37% vs baseline
-3. **Data quality matters**: Capping age outliers (IQR method) preserved 3.12% critical cases
-4. **Cluster differences**: 
-   - Cluster 0: Younger patients with respiratory symptoms (4.3% ICU)
-   - Cluster 1: Elderly with comorbidities (12.6% ICU)
-
-## 🔗 References
-1. Chawla, N.V. et al. (2002) - SMOTE sampling
-2. Zaharia, M. et al. (2016) - Apache Spark
-3. Arthur, D. & Vassilvitskii, S. (2007) - k-means++
-
-*Dataset: Mexican COVID-19 Patient Data (200,031 records)*
-
-
----
-
-### Key Visuals to Include in Repo  
-1. *plots/workflow_diagram.png*: End-to-end system architecture
-2. *plots/cluster_analysis.png*: K-Means clusters with ICU rates
-3. *evaluation/model_comparison.png*: AUC/F1-score improvements
-4. *plots/feature_correlation.png*: Heatmap of top ICU predictors
